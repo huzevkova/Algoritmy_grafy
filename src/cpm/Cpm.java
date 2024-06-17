@@ -6,6 +6,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * Časová analýza projektov - metóda CPM.
+ *
+ * @author Bianka S. Húževková
+ * @version 2.0 (20.5.2023)
+ */
 public class Cpm {
 
     public Cpm(String subor1, String subor2) throws FileNotFoundException {
@@ -30,6 +36,14 @@ public class Cpm {
         System.out.println(s.substring(0, s.length() - 2));
     }
 
+    /**
+     * Načíta a vráti ceny vrcholov projektu.
+     *
+     * @param subor
+     * @param pocetV
+     * @return
+     * @throws FileNotFoundException
+     */
     public int[] cenaVrcholov(String subor, int pocetV) throws FileNotFoundException {
         Scanner scan = new Scanner(new FileInputStream(subor));
 
@@ -43,7 +57,7 @@ public class Cpm {
         return cena;
     }
 
-    public String konvertuj(int i) {
+    private String konvertuj(int i) {
         ArrayList<String> pismena = new ArrayList<>( Arrays.asList("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"));
         return pismena.get(i - 1);
     }

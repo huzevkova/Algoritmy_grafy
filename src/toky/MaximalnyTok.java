@@ -8,6 +8,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * Algoritmus na hľadanie maximálneho toku v sieti.
+ *
+ * @author Bianka S. Húževková
+ * @version 2.0 (15.5.2023)
+ */
 public class MaximalnyTok {
 
     private int[][] h;
@@ -79,6 +85,11 @@ public class MaximalnyTok {
         System.out.println("Velkosť toku: " + this.velkostToku());
     }
 
+    /**
+     * Vypočíta veľkosť toku.
+     *
+     * @return
+     */
     public int velkostToku() {
         int velkost = 0;
         for (int i = 0; i < this.h.length; i++) {
@@ -89,6 +100,12 @@ public class MaximalnyTok {
         return velkost;
     }
 
+    /**
+     * Aktualizácia toku podľa rezervy.
+     *
+     * @param rezerva
+     * @param polocesta
+     */
     public void aktualizujToky(int rezerva, ArrayList<Integer> polocesta) {
         for (int i = polocesta.size() - 1; i > 0; i--) {
             for (int j = 0; j < this.h.length; j++) {
@@ -101,6 +118,12 @@ public class MaximalnyTok {
         }
     }
 
+    /**
+     * Zapíše výsledok do súboru.
+     *
+     * @param subor
+     * @throws FileNotFoundException
+     */
     public void zapisMaxTok(String subor) throws FileNotFoundException {
         File file = new File(subor);
         PrintWriter writer = new PrintWriter(file);
@@ -114,6 +137,12 @@ public class MaximalnyTok {
         writer.close();
     }
 
+    /**
+     * Metóda na prečítanie a uloženie údajov.
+     *
+     * @param subor
+     * @throws FileNotFoundException
+     */
     public void precitajUdaje(String subor) throws FileNotFoundException {
         Scanner scan = new Scanner(new FileInputStream(subor));
 
@@ -150,7 +179,7 @@ public class MaximalnyTok {
         }
     }
 
-    public int konvertujPrvyKrat(String s) {
+    private int konvertujPrvyKrat(String s) {
         ArrayList<String> pismena = new ArrayList<>( Arrays.asList("Z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"));
         if (s.equals("U")) {
             return this.pocetVrcholov + 1;
@@ -158,7 +187,7 @@ public class MaximalnyTok {
             return pismena.indexOf(s) + 1;
         }
     }
-    public int konvertuj(String s) {
+    private int konvertuj(String s) {
         ArrayList<String> pismena = new ArrayList<>( Arrays.asList("Z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"));
         if (s.equals("U")) {
             return this.pocetVrcholov;
@@ -167,7 +196,7 @@ public class MaximalnyTok {
         }
     }
 
-    public String konvertuj(int i) {
+    private String konvertuj(int i) {
         ArrayList<String> pismena = new ArrayList<>( Arrays.asList("Z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"));
         if (i == this.pocetVrcholov) {
             return "U";

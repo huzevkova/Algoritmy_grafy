@@ -5,6 +5,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * Vytvorenie monotónneho očíslovania.
+ *
+ * @author Bianka S. Húževková
+ * @version 2.0 (20.5.2023)
+ */
 public class Monotonnost {
     private int pocetVrcholov;
     private int[][] h;

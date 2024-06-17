@@ -3,6 +3,12 @@ package cpm;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Vytvorenie postupnosti najneskôrších možných koncov z metódy CPM.
+ *
+ * @author Bianka S. Húževková
+ * @version 2.0 (20.5.2023)
+ */
 public class NajneskorMozneKonce {
 
     private int pocetVrcholov;

@@ -6,6 +6,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * Algoritmus na hľadanie najlacnejšieho toku v sieti s ohodnotenými hranami.
+ *
+ * @author Bianka S. Húževková
+ * @version 2.0 (15.5.2023)
+ */
 public class NajlacnejsiTok {
 
     private int[][] h;
@@ -121,7 +127,7 @@ public class NajlacnejsiTok {
         System.out.println("Nová (najlacnejsia) cena: " + novaCena);
     }
 
-    public boolean kontrola(int[] x, int i) {
+    private boolean kontrola(int[] x, int i) {
         int pocet = 1;
         int cesta = x[i];
         while (cesta != 0 && cesta < x.length && pocet < x.length) {
@@ -134,6 +140,11 @@ public class NajlacnejsiTok {
         return false;
     }
 
+    /**
+     * Vypočíta cenu toku.
+     *
+     * @return
+     */
     public int cenaToku() {
         int cena = 0;
         for (int i = 0; i < this.toky.length; i++) {
@@ -142,6 +153,12 @@ public class NajlacnejsiTok {
         return cena;
     }
 
+    /**
+     * Metóda na prečítanie a uloženie údajov.
+     *
+     * @param subor
+     * @throws FileNotFoundException
+     */
     public void precitajUdaje(String subor) throws FileNotFoundException {
         Scanner scan = new Scanner(new FileInputStream(subor));
 
@@ -178,7 +195,7 @@ public class NajlacnejsiTok {
         }
     }
 
-    public String konvertuj(int i) {
+    private String konvertuj(int i) {
         ArrayList<String> pismena = new ArrayList<>( Arrays.asList("Z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"));
         if (i == this.pocetVrcholov) {
             return "U";

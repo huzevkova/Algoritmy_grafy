@@ -4,6 +4,12 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Vytvorenie postupnosti najskôrších možných začiatkov z metódy CPM.
+ *
+ * @author Bianka S. Húževková
+ * @version 2.0 (20.5.2023)
+ */
 public class NajskorMozneZaciatky {
     private int pocetVrcholov;
     private int[][] h;
