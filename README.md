@@ -1,0 +1,1 @@
+Algortimy na prácu s grafmi a sieťami - hľadanie najkratších / najvýhodnejších ciest. Label set, Kruskalov, toky, CPM. Jednoduché konzolové ovládanie. Ukážkové dáta priložené, možno prepísať súbory, alebo pridať vlastné.
